@@ -490,7 +490,20 @@ function openPdfViewer(group,index){
 currentPdfGroup = group;
 currentPdfIndex = index;
 
+/* DETECTAR MOVIL */
+
+if(window.innerWidth <= 768){
+
+window.location.href = currentPdfGroup[currentPdfIndex].pdf;
+
+return;
+
+}
+
+/* VERSION ORDENADOR */
+
 document.getElementById("mainMenuScreen").classList.add("hidden");
+
 document.getElementById("subMenuScreen").classList.add("hidden");
 
 document.getElementById("viewerContainer").classList.remove("hidden");
