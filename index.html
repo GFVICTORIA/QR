@@ -22,8 +22,18 @@ body{
     background-position:center;
     background-repeat:no-repeat;
     min-height:100vh;
+    height:100dvh;
     overflow:hidden;
     color:white;
+}
+@media(max-width:768px){
+
+body{
+    background-image:url("fondo-mobile.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
 }
 
 /* FONDO OSCURO */
@@ -179,6 +189,10 @@ button{
     font-size:12px;
     padding:8px 12px;
 }
+.pdf-viewer{
+    margin-top:70px;
+    height:calc(100vh - 70px);
+}
 
 }
 
@@ -232,7 +246,7 @@ button{
 
 <button class="close-btn" onclick="closeViewer()">✕</button>
 
-<iframe class="pdf-viewer" id="pdfViewer"></iframe>
+<embed class="pdf-viewer" id="pdfViewer" type="application/pdf">
 
 </div>
 
@@ -466,9 +480,7 @@ loadPdf();
 
 function loadPdf(){
 
-const viewer = document.getElementById("pdfViewer");
-
-viewer.src = currentPdfGroup[currentPdfIndex].pdf;
+document.getElementById("pdfViewer").src = currentPdfGroup[currentPdfIndex].pdf;
 
 const nav = document.getElementById("pdfNav");
 
