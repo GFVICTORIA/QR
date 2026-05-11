@@ -269,7 +269,7 @@ button{
 
 <button class="close-btn" onclick="closeViewer()">✕</button>
 
-<embed class="pdf-viewer" id="pdfViewer" type="application/pdf">
+<object class="pdf-viewer" id="pdfViewer" type="application/pdf"></object>
 
 </div>
 
@@ -503,7 +503,7 @@ loadPdf();
 
 function loadPdf(){
 
-document.getElementById("pdfViewer").src = currentPdfGroup[currentPdfIndex].pdf;
+document.getElementById("pdfViewer").data = currentPdfGroup[currentPdfIndex].pdf;
 
 const nav = document.getElementById("pdfNav");
 
