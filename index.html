@@ -26,7 +26,7 @@ body{
     color:white;
 }
 
-/* OSCURECER FONDO */
+/* FONDO OSCURO */
 
 .overlay{
     position:fixed;
@@ -114,7 +114,7 @@ button:hover{
     border:none;
 }
 
-/* MENU SUPERIOR PDF */
+/* MENU SUPERIOR */
 
 .top-bar{
     position:absolute;
@@ -129,7 +129,7 @@ button:hover{
     width:95%;
 }
 
-/* BOTONES SUPERIORES PDF */
+/* BOTONES SUPERIORES */
 
 .top-btn{
     padding:10px 16px;
@@ -140,18 +140,13 @@ button:hover{
     cursor:pointer;
     font-size:15px;
     backdrop-filter:blur(4px);
-    transition:0.3s;
-}
-
-.top-btn:hover{
-    background:rgba(0,0,0,0.92);
 }
 
 .top-btn.active{
     background:#a0002c;
 }
 
-/* CERRAR PDF */
+/* BOTON CERRAR */
 
 .close-btn{
     position:absolute;
@@ -167,7 +162,7 @@ button:hover{
     font-size:16px;
 }
 
-/* MOVIL */
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
@@ -185,11 +180,6 @@ button{
     padding:8px 12px;
 }
 
-.close-btn{
-    top:15px;
-    right:15px;
-}
-
 }
 
 </style>
@@ -199,7 +189,7 @@ button{
 
 <div class="overlay"></div>
 
-<!-- IDIOMAS -->
+<!-- PANTALLA IDIOMAS -->
 
 <div class="screen" id="languageScreen">
 
@@ -386,9 +376,7 @@ const back = document.createElement("button");
 
 back.className = "back-btn";
 
-back.innerText = lang==="es"
-? "← Volver"
-: "← Back";
+back.innerText = lang==="es" ? "← Volver" : "← Back";
 
 back.onclick = ()=>{
 
@@ -444,9 +432,7 @@ const back = document.createElement("button");
 
 back.className = "back-btn";
 
-back.innerText = currentLang==="es"
-? "← Volver"
-: "← Back";
+back.innerText = currentLang==="es" ? "← Volver" : "← Back";
 
 back.onclick = ()=>{
 
@@ -495,7 +481,9 @@ const btn = document.createElement("button");
 btn.className = "top-btn";
 
 if(index===currentPdfIndex){
+
 btn.classList.add("active");
+
 }
 
 btn.innerText = item.name;
